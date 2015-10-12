@@ -1,5 +1,7 @@
 # Summary
 - [教学反转](0MOOC/README.md)
+    - [第一周](OMOOC/0w/README.md)
+        - [Mac配置命令行访问 github.com](OMOOC/0w/0d_mac配置命令行访问github.com.md) 
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
