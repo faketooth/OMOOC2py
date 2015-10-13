@@ -2,6 +2,8 @@
 # Quick Python Script Explanation for Programmers
 # 给程序员的超快速Py脚本解说
 import os
+import xml.etree.cElementTree as ET
+import sys
 
 def main():
 	print 'Hello World!'
@@ -38,5 +40,14 @@ def foo(param1, secondParam):
 	'''这是多
 行注释......'''
 
+def createXml(f):
+	print '=' * 10
+	tree = ET.ElementTree(file=f)
+	root = tree.getroot()
+	tree_new = ET.ElementTree(root[-1])
+	tree_new.write(sys.stdout)
+	tree_new.write("new.xml")
+
 if __name__=='__main__':
 	main()
+	createXml('test.xml')
