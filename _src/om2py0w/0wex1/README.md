@@ -19,3 +19,12 @@
 3. 开始接受用户输入，以`> `作为提示符，每次接受用户一行输入
 4. 用户键入`exit`并敲回车后，退出脚本
 5. 运行方法`python run.py <log_file_name>`
+
+## 学习记录
+* git add [-f]
+* git commit -m "message"
+* git remote add <name> <url> 
+    * 注意url的格式，如果是https开头的，则每次push的时候需要输入用户名密码
+    * 如果url是ssh格式的，则可以通过互信来提交
+* git remote -v
+* git push <remote host> <local branch>:<remote branch>
