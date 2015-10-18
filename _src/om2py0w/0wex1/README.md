@@ -23,8 +23,8 @@
 ## 学习记录
 * git add [-f]
 * git commit -m "message"
-* git remote add <name> <url> 
+* git remote add \<name\> \<url\> 
     * 注意url的格式，如果是https开头的，则每次push的时候需要输入用户名密码
     * 如果url是ssh格式的，则可以通过互信来提交
 * git remote -v
-* git push <remote host> <local branch>:<remote branch>
+* git push \<remote host\> \<local branch\>:\<remote branch\>
