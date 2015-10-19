@@ -4,7 +4,7 @@
         - [Mac配置命令行访问 github.com](0MOOC/0w/0d_mac配置命令行访问github.com.md) 
         - [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
     - [第二周](0MOOC/0w/README.md)
-        - [交互101 - 小小日记系统](_src/om2py0w/0wex0/README.md)
+        - [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
