@@ -5,6 +5,7 @@
         - [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
     - [第二周](0MOOC/0w/README.md)
         - [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
+        - [1w1d 日记系统开发记录](_src/om2py0w/0wex1/review_1wex0.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
