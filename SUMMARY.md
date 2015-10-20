@@ -7,6 +7,7 @@
         - [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
         - [1wd1 日记系统开发记录](_src/om2py0w/0wex1/review_1wex0.md)
         - [1wd2 重构作业](_src/om2py0w/0wex1/review2_1wex0.md)
+        - [1wd3 极简交互式日记系统开发复盘](0MOOC/1w/极简交互式日记系统开发复盘.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
