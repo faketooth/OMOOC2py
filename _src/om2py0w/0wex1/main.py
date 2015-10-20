@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-http://www.iomooc.com/pages/cards.html?taskId=313a2360-6db3-11e5-a837-0800200c9a66#tip0
-'''
+
 import sys
 import logging
 
@@ -22,9 +20,22 @@ def appendHistory(file):
 	logging.basicConfig(format='%(asctime)-15s %(message)s', filename=file, level=logging.DEBUG)
 	print 'Start to log...'
 	print 'To stop this script, input "exit" and hit the "ENTER" key.'
+	print '"history" command will print all history log.'
 	input = raw_input("> ")
-	logging.debug(input)
-	while(input != 'exit'):		
-		input = raw_input("> ")
+	while(input != 'exit'):
 		logging.debug(input)
+		if(input == 'history'):
+			readHistory(file)		
+		input = raw_input("> ")
 
+def main(argv):
+	file = sys.argv[1] 
+	readHistory(file)
+	appendHistory(file)
+
+if __name__ == '__main__':
+	if(len(sys.argv) != 2):
+		usage = 'Run the script like this:\n\tpython main.py <history.log>'
+		print usage
+		sys.exit(-1)
+	main(sys.argv)	
