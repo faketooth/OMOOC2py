@@ -34,8 +34,10 @@ def main(argv):
 	appendHistory(file)
 
 if __name__ == '__main__':
-	if(len(sys.argv) != 2):
+	if(len(sys.argv) > 2):
 		usage = 'Run the script like this:\n\tpython main.py <history.log>'
 		print usage
 		sys.exit(-1)
+	if(len(sys.argv) == 1):
+		sys.argv.append('history.log')
 	main(sys.argv)	
