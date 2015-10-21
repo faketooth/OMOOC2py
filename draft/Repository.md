@@ -16,6 +16,8 @@
 ## 版本仓库
 `Repository`的定义，从`git`用户的角度看来就是一个存放所有工程文件、历史版本和配置的地方。
 
+而从`git`工作原理的角度来讲，版本仓库由一系列`commit objects`和`heads`组成。而`commit object`包含了某个具体时间点下一系列项目文件，`parent commit objects`的引用，还有一个`SHA1 name`。`head`则是一个指向特定`commit object`的引用。
+
 ## 仓库的使命
 仓库的使命是实现版本控制，团队协作，数据共享同步和备份。
 
