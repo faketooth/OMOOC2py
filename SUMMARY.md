@@ -8,6 +8,7 @@
         - [1wd1 日记系统开发记录](0MOOC/1w/review_1wex0.md)
         - [1wd2 重构作业](0MOOC/1w/review2_1wex0.md)
         - [1wd3 极简交互式日记系统开发复盘](0MOOC/1w/极简交互式日记系统开发复盘.md)
+        - [1wd3 关于版本仓库的理解](0MOOC/1w/Repository.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
