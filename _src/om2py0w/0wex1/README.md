@@ -20,6 +20,7 @@
 4. 用户键入`exit`并敲回车后，退出脚本
 5. 用户键入`history`命令后，打印目前为止的日记内容
 6. 运行方法`python main.py <log_file_name>`
+7. 用户键入`python main.py`的时候，使用`history.log`作为日记文件，参数个数超过一个的时候，打印`usage`信息
 
 ## 学习记录
 * git add [-f]
