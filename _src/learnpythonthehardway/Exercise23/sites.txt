@@ -1,0 +1,4 @@
+github.com
+launchpad.net
+gitorious.org
+sourceforge.net
