@@ -20,7 +20,7 @@ class Application(Frame):
 		self.QUIT.pack({"side": "left"})
 		
 		self.hi_there = Button(self)
-		self.hi_there["text"] = "Hello",
+		self.hi_there["text"] = "Hello World"
 		self.hi_there["command"] = self.say_hi
 		
 		self.hi_there.pack({"side": "left"})
@@ -33,7 +33,7 @@ class Application(Frame):
 root = Tk()
 app = Application(master=root)
 app.mainloop()
-root.destroy() 
+#root.destroy() 
 ```
 运行效果如下(***好吧，这个运行结果是错的，因为犯了一个鱼唇的错误导致控件没有绘制出来，右侧的图才是对的***)：
 
@@ -50,6 +50,6 @@ Traceback (most recent call last):
     self.tk.call('destroy', self._w)
 _tkinter.TclError: can't invoke "destroy" command:  application has been destroyed
 ```
-看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。暂时作为 bug 提交一个 [issue](https://github.com/faketooth/OMOOC2py/issues/3) 。
+看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。暂时作为 bug 提交一个 [issue](https://github.com/faketooth/OMOOC2py/issues/3) (已经解决)。
 
 ## 代码分析

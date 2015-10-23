@@ -15,7 +15,7 @@ class Application(Frame):
 		self.QUIT.pack({"side": "left"})
 		
 		self.hi_there = Button(self)
-		self.hi_there["text"] = "Hello",
+		self.hi_there["text"] = "Hello World"
 		self.hi_there["command"] = self.say_hi
 		
 		self.hi_there.pack({"side": "left"})
