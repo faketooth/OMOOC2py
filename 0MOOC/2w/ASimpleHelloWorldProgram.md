@@ -35,9 +35,10 @@ app = Application(master=root)
 app.mainloop()
 root.destroy() 
 ```
-运行效果如下：
+运行效果如下(***好吧，这个运行结果是错的，因为犯了一个鱼唇的错误导致控件没有绘制出来，右侧的图才是对的***)：
 
 ![ASimpleHelloWorldProgram-0.png](./ASimpleHelloWorldProgram-0.png)
+![ASimpleHelloWorldProgram-1.png](./ASimpleHelloWorldProgram-1.png)
 
 但在鼠标关闭窗口的时候，shell中可以看到以下报错信息：
 
