@@ -49,4 +49,5 @@ Traceback (most recent call last):
     self.tk.call('destroy', self._w)
 _tkinter.TclError: can't invoke "destroy" command:  application has been destroyed
 ```
-看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。
+看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。暂时作为 bug 提交一个 [issue](https://github.com/faketooth/OMOOC2py/issues/3) 。
+
