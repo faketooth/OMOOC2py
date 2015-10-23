@@ -20,7 +20,7 @@ class Application(Frame):
 		
 		self.hi_there.pack({"side": "left"})
 		
-		def __init__(self, master=None):
+	def __init__(self, master=None):
 			Frame.__init__(self, master)
 			self.pack()
 			self.createWidgets()

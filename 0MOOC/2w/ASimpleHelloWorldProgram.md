@@ -25,7 +25,7 @@ class Application(Frame):
 		
 		self.hi_there.pack({"side": "left"})
 		
-		def __init__(self, master=None):
+	def __init__(self, master=None):
 			Frame.__init__(self, master)
 			self.pack()
 			self.createWidgets()
@@ -51,3 +51,4 @@ _tkinter.TclError: can't invoke "destroy" command:  application has been destroy
 ```
 看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。暂时作为 bug 提交一个 [issue](https://github.com/faketooth/OMOOC2py/issues/3) 。
 
+## 代码分析
