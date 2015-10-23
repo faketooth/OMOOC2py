@@ -35,3 +35,18 @@ app = Application(master=root)
 app.mainloop()
 root.destroy() 
 ```
+运行效果如下：
+
+![ASimpleHelloWorldProgram-0.png](./ASimpleHelloWorldProgram-0.png)
+
+但在鼠标关闭窗口的时候，shell中可以看到以下报错信息：
+
+```
+Traceback (most recent call last):
+  File "ASimpleHelloWorldProgram.py", line 31, in <module>
+    root.destroy() 
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk/Tkinter.py", line 1859, in destroy
+    self.tk.call('destroy', self._w)
+_tkinter.TclError: can't invoke "destroy" command:  application has been destroyed
+```
+看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。
