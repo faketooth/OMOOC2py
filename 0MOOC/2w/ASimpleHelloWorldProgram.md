@@ -64,3 +64,5 @@ _tkinter.TclError: can't invoke "destroy" command:  application has been destroy
 	* 点击`QUIT`按钮，窗口退出
 * `createWidgets()`方法中创建了两个`Button()`对象，并绑定了其`command`属性需要调用的函数。
 
+## 来自官方的恶意
+这份`Hello World`性质的代码有官方这么多坑也真是够了（[issue 3](https://github.com/faketooth/OMOOC2py/issues/3)）。
