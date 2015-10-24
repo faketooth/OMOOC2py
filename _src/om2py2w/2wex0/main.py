@@ -9,17 +9,27 @@ class Application(Frame):
 		print 'foo'
 	
 	def createWidgets(self):
-			text = Entry(self, background = 'red')
-			text.pack()
-			
-			menu = Menu(self)
-			menu.add_command(label="Hello", command='foo')
-			menu.pack()
+		text = Entry(self, background = 'red')
+		text.grid()
+		
 		
 	def __init__(self, master=None):
-			Frame.__init__(self, master)
-			self.pack()
-			self.createWidgets()
-
-app = Application()
+		Frame.__init__(self, master)
+		master.geometry('400x300')
+		menubar = Menu(root)
+		file = Menu(menubar)
+		file.add_command(label="File", command=self.foo)
+		file.add_command(label="Quit", command=self.foo)
+		menubar.add_cascade(label="File", menu=file)
+		root.config(menu=menubar)
+		self.grid()
+		self.createWidgets()
+			
+def foo():
+	print 'foo'
+	
+root = Tk()
+root.title("WTF")
+app = Application(master=root)
 app.mainloop()
+#root.mainloop()
