@@ -8,6 +8,9 @@ class Application(Frame):
 	def createWidgets(self):
 			text = Entry(self, background = 'red')
 			text.pack()
+			
+			menu = Menu(self)
+			ment.add_command(label="Hello")
 		
 	def __init__(self, master=None):
 			Frame.__init__(self, master)
