@@ -41,7 +41,7 @@ class Application(Frame):
 			text.pack()
 			
 			menu = Menu(self)
-			ment.add_command(label="Hello")
+			menu.add_command(label="Hello")
 		
 	def __init__(self, master=None):
 			Frame.__init__(self, master)
@@ -51,3 +51,5 @@ class Application(Frame):
 app = Application()
 app.mainloop()
 ```
+效果：
+

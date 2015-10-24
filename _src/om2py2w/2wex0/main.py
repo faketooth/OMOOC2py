@@ -10,7 +10,7 @@ class Application(Frame):
 			text.pack()
 			
 			menu = Menu(self)
-			ment.add_command(label="Hello")
+			menu.add_command(label="Hello")
 		
 	def __init__(self, master=None):
 			Frame.__init__(self, master)
