@@ -1,7 +1,7 @@
 # 迭代记录
 ---------------------------------------------------
 
-## 1. 创建文本框控件
+## 创建文本框控件
 
 迭代代码
 
@@ -27,7 +27,11 @@ app.mainloop()
 
 ![Entry-Widgets.png](./Entry-Widgets.png)
 
-## 2. 添加菜单
+### 参考资料：
+1. [Python2.7.3 Tkinter Entry(文本框) 说明](http://www.cnblogs.com/onlyfu/archive/2013/03/07/2947473.html)
+
+
+## 添加菜单
 
 迭代代码
 
@@ -102,3 +106,13 @@ def popup(event):
 #在这里相应鼠标的右键事件，右击时调用popup,此时与菜单绑定的是root，可以设置为其它的控件，在绑定的控件上右击就可以弹出菜单
 root.bind('<Button-2>',popup)
 ```
+
+### 参考资料
+1. [The Tkinter Menu Widget](http://effbot.org/tkinterbook/menu.htm)
+2. [The Tkinter Toplevel Widget](http://effbot.org/tkinterbook/toplevel.htm)
+3. [Python Tkinter menu bars don't display](http://stackoverflow.com/questions/15373493/python-tkinter-menu-bars-dont-display)
+4. [Hello, Tkinter](http://effbot.org/tkinterbook/tkinter-hello-tkinter.htm)
+5. [Tk Concepts](http://www.tkdocs.com/tutorial/concepts.html):Window Hierarchy
+6. [Python Tkinter Menu使用教程](http://blog.csdn.net/wangyiyan315/article/details/16367551)
+7. [Tkinter教程之Menu篇](http://blog.csdn.net/jcodeer/article/details/1811321)
+8. [Python之Tkinter布局管理](http://blog.csdn.net/zxia1/article/details/8254092)
