@@ -5,3 +5,5 @@
 - 保存为本地文件
 
 窗口底部为菜单按钮和文本输入框，上方提供文本展示框。
+
+![RequirementAnalysis-gui-prototype.png](./RequirementAnalysis-gui-prototype.png)
