@@ -53,3 +53,14 @@ _tkinter.TclError: can't invoke "destroy" command:  application has been destroy
 看错误信息的意思是调用`root.destroy()`方法的时候，`application`已经被销毁了。注释掉那行代码之后，再次执行不再报错。暂时作为 bug 提交一个 [issue](https://github.com/faketooth/OMOOC2py/issues/3) (已经解决)。
 
 ## 代码分析
+
+基于以往的知识先分析一下这段代码：
+
+* 代码中定义了一个`Application`的类，继承`Frame`，应该是窗口主体
+* 为了能够使窗口展现，先创建了一个`Tk()`的实例，作为入参创建`Applicaton`的一个`app`
+* 调用`mainloop()`，使窗口进入消息循环
+	* 窗口初始化，绘制两个`Button`控件
+	* 点击`Hello World`按钮，运行脚本的`Shell`打印`hi there, everyone!`
+	* 点击`QUIT`按钮，窗口退出
+* `createWidgets()`方法中创建了两个`Button()`对象，并绑定了其`command`属性需要调用的函数。
+
