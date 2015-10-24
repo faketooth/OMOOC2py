@@ -70,3 +70,35 @@ Traceback (most recent call last):
 _tkinter.TclError: can't pack ".4330939672.4331056088": it's a top-level window
 ```
 也就是说，`Menu`不能用`pack()`来管理。开ISSUE跟踪分析：[issue4](https://github.com/faketooth/OMOOC2py/issues/4)
+
+`Tkinter`中提供的菜单有三种形式：`Toplevel`，`Pulldown`，`Popup`。多方查找相关Demo，发现在`Mac`上无法单独展现`Toplevel`类型的菜单项，必须与下拉菜单配合才行；而`Popup`的Demo在`Mac`上的执行结果与Demo注释不符，`<Button-3>`被识别为鼠标中键消息，而非右键。经测试，`Mac`上的鼠标右键应为`<Buttion-2>`。
+
+下拉菜单的效果：
+
+![Menu-Widgets.png](./Menu-Widgets.png)
+
+关键代码为:
+
+```
+menubar = Menu(root)
+file = Menu(menubar)
+file.add_command(label="File", command=self.foo)
+file.add_command(label="Quit", command=self.foo)
+menubar.add_cascade(label="File", menu=file)
+root.config(menu=menubar)
+```
+
+弹出菜单执行效果：
+
+![popup-menu.png](./popup-menu.png)
+
+关键代码为：
+
+```
+menubar.add_cascade(label = 'Language',menu = filemenu)
+def popup(event):
+    #显示菜单
+    menubar.post(event.x_root,event.y_root)
+#在这里相应鼠标的右键事件，右击时调用popup,此时与菜单绑定的是root，可以设置为其它的控件，在绑定的控件上右击就可以弹出菜单
+root.bind('<Button-2>',popup)
+```
