@@ -13,17 +13,16 @@ class Application(Frame):
 		text.config(state=DISABLED)
 		text.pack()
 		label = Label(self, text='input: ')
-		label.pack()
+		label.pack({"side": "left"})
 		entry = Entry(self, background = 'red')
-		entry.pack()
+		entry.pack({"side": "left"})
 		button = Button(self, text='save')
-		button.pack()
-		
+		button.pack({"side": "left"})
 		
 		
 	def __init__(self, master=None):
 		Frame.__init__(self, master)
-		master.geometry('400x300')
+		#master.geometry('400x300')
 		menubar = Menu(root)
 		file = Menu(menubar)
 		file.add_command(label="File", command=self.foo)

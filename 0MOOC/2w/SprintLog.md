@@ -151,3 +151,17 @@ button.pack()
 执行效果：
 
 ![Button-Widget.png](./Button-Widget.png)
+
+## 调整布局
+目前所有控件是按照添加顺序纵向排列，需要调整一下顺序。因此需要调整`Label`，`Entry`，`Button`三个控件的位置，从左到右依次排列。关键代码：
+
+```
+label.pack({"side": "left"})
+entry.pack({"side": "left"})
+button.pack({"side": "left"})
+```
+效果如下：
+
+![Layout-01.png](./Layout-01.png)
+
+还需要进一步微调。
