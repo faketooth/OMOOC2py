@@ -6,8 +6,10 @@ from history import *
 
 class Application(Frame):
 	
-	def foo(self):
-		print 'foo'
+	def foo(self, event):
+		print 'foo ', event
+		print self.entry.get() 
+		self.entry.delete(0, END)
 	
 	def createWidgets(self):
 		self.textWidget()
@@ -16,26 +18,27 @@ class Application(Frame):
 		self.buttonWidget()
 		
 	def textWidget(self):
-		text = Text(self, background = 'blue', font=("", 18), width='60', height='10')
+		self.text = Text(self, background = 'blue', font=("", 18), width='60', height='10')
 		lines = readHistory(file)
 
 		for line in lines:
-			text.insert(END, line)
+			self.text.insert(END, line)
 		
-		text.config(state=DISABLED)
-		text.pack()
+		self.text.config(state=DISABLED)
+		self.text.pack()
 		
 	def labelWidget(self):
-		label = Label(self, text=' input: ', font=("Arial", 20))
-		label.pack({"side": "left"})
+		self.label = Label(self, text=' input: ', font=("Arial", 20))
+		self.label.pack({"side": "left"})
 	
 	def entryWidget(self):
-		entry = Entry(self, background = 'red', font=("Arial", 20))
-		entry.pack({"side": "left"})
+		self.entry = Entry(self, background = 'red', font=("Arial", 20))
+		self.entry.bind("<Key-Return>", self.foo)
+		self.entry.pack({"side": "left"})
 		
 	def buttonWidget(self):
-		button = Button(self, text='save', font=("Arial", 20))
-		button.pack({"side": "left"})
+		self.button = Button(self, text='save', font=("Arial", 20))
+		self.button.pack({"side": "left"})
 		
 	def __init__(self, master=None):
 		Frame.__init__(self, master)
@@ -48,9 +51,6 @@ class Application(Frame):
 		master.config(menu=menubar)
 		self.grid()
 		self.createWidgets()
-			
-def foo():
-	print 'foo'
 
 
 def main(argv):
