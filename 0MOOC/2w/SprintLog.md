@@ -141,3 +141,13 @@ label.pack()
 
 ![Label-Widget.png](./Label-Widget.png)
 
+## 还需要个按钮
+按钮提供保存当前日记的能力，关键代码如下：
+
+```
+button = Button(self, text='save')
+button.pack()
+```
+执行效果：
+
+![Button-Widget.png](./Button-Widget.png)
