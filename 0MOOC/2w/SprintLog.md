@@ -116,3 +116,13 @@ root.bind('<Button-2>',popup)
 6. [Python Tkinter Menu使用教程](http://blog.csdn.net/wangyiyan315/article/details/16367551)
 7. [Tkinter教程之Menu篇](http://blog.csdn.net/jcodeer/article/details/1811321)
 8. [Python之Tkinter布局管理](http://blog.csdn.net/zxia1/article/details/8254092)
+
+## 添加文本框
+文本框的目的是展示当前和历史日记内容，禁用其编辑能力，关键代码：
+
+```
+text = Text(self, background = 'blue')
+text.config(state=DISABLED)
+text.pack()
+```
+效果
