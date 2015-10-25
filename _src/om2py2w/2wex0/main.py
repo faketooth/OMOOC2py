@@ -7,9 +7,16 @@ from history import *
 class Application(Frame):
 	
 	def foo(self, event):
-		print 'foo ', event
-		print self.entry.get() 
+		line = self.line.get()
+		appendHistory(file,line)
+		self.insertInTextWidget(line)
 		self.entry.delete(0, END)
+	
+	def insertInTextWidget(self, line):
+		self.text.config(state=NORMAL)
+		self.text.insert(END, line+"\n")
+		self.text.see(END)
+		self.text.config(state=DISABLED)
 	
 	def createWidgets(self):
 		self.textWidget()
@@ -25,6 +32,7 @@ class Application(Frame):
 			self.text.insert(END, line)
 		
 		self.text.config(state=DISABLED)
+		self.text.see(END)
 		self.text.pack()
 		
 	def labelWidget(self):
@@ -32,8 +40,10 @@ class Application(Frame):
 		self.label.pack({"side": "left"})
 	
 	def entryWidget(self):
-		self.entry = Entry(self, background = 'red', font=("Arial", 20))
-		self.entry.bind("<Key-Return>", self.foo)
+		self.line = StringVar(self)
+		self.entry = Entry(self, textvariable=self.line, background = 'red', font=("宋体", 20, "normal"))
+		self.entry.insert(0, "测试")
+		self.entry.bind("<Return>", self.foo)
 		self.entry.pack({"side": "left"})
 		
 	def buttonWidget(self):
@@ -57,7 +67,7 @@ def main(argv):
 	global file 
 	file = sys.argv[1] 
 	root = Tk()
-	root.title("GUI 101")
+	root.title("GUI 101:  " + file)
 	app = Application(master=root)
 	app.mainloop()
 	#appendHistory(file)

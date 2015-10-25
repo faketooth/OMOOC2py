@@ -170,3 +170,67 @@ button.pack({"side": "left"})
 利用上次任务创建的代码：
 
 ![ReadHistory.png](ReadHistory.png)
+
+## Entry Widget绑定回车键事件
+Entry Widget绑定回车键事件，按下回车之后，将控件中的内容写入到当前日记文件中，并清空文本框。关键代码如下：
+
+```
+def entryWidget(self):
+		self.entry = Entry(self, background = 'red', font=("Arial", 20))
+		self.entry.bind("<Key-Return>", self.foo)
+		self.entry.pack({"side": "left"})
+		
+def foo(self, event):
+		line = self.entry.get() 
+		appendHistory(file,line)
+		self.entry.delete(0, END)
+```
+
+效果如下：
+
+![AppendNewHistoryToFile.png](./AppendNewHistoryToFile.png)
+
+### 参考资料：
+1. [Tkinter事件绑定，参数如何传递](http://blog.csdn.net/tinym87/article/details/6957438)
+2. [Tkinter中的Events事件（关于bind（）的详细描述）](http://blog.csdn.net/rgsongzh/article/details/37912177)
+
+## 联动
+
+原本想通过事件监控对应日记文件是否发生变化，并自动刷新到`Text Widget`上，但一时没找到对应接口，就先做一个假的[WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG)。
+
+关键代码：
+
+```
+def foo(self, event):
+		line = self.entry.get() 
+		appendHistory(file,line)
+		self.insertInTextWidget(line)
+		self.entry.delete(0, END)
+	
+def insertInTextWidget(self, line):
+		self.text.config(state=NORMAL)
+		self.text.insert(END, line+"\n")
+		self.text.see(END)
+		self.text.config(state=DISABLED)
+```
+
+效果展示：
+![WYSIWYG.png](./WYSIWYG.png)
+
+## Entry Widget支持中文
+
+这又是一个官方的恶意。本以为是控件的那个属性没设置对，或者是`Key-Enter`的监听事件影响，无法在文本框中输入中文，一通疯狂的Google无果。准备换换脑子，看点电视剧打发打发，结果用新的关键词搜到了答案。
+
+反思一下关键词，之前一直没有搜索到正确答案，是因为关键词用了`tkinter entry 输入中文`或者`tkinter text 输入中文`，而搜索到正确答案用的关键词是`tkinter 输入中文`。就差这么一个关键词，为了更加准确描述问题而添加的关键词。
+
+最终效果：
+
+![ChineseChar.png](./ChineseChar.png)
+
+参考资料：
+
+1. [MAC 系统中，Tkinter 无法用 中文输入法 输入中文](http://www.jianshu.com/p/f9e30bdc5806)
+2. [解决MAC版 IDLE 不支持中文输入法](http://bbs.fishc.com/thread-58463-1-1.html)
+3. [mac下的 idle为何不能输入中文?该如何解决?](http://www.zhihu.com/question/26532408)
+
+
