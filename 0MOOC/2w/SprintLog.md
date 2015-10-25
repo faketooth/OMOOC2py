@@ -125,4 +125,7 @@ text = Text(self, background = 'blue')
 text.config(state=DISABLED)
 text.pack()
 ```
-效果
+效果：
+
+![Text-Widget.pn](./Text-Widget.png)
+
