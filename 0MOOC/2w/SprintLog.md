@@ -217,7 +217,7 @@ def insertInTextWidget(self, line):
 效果展示：
 ![WYSIWYG.png](./WYSIWYG.png)
 
-## Entry Widget支持中文
+## [Entry Widget支持中文](#chinese-support)
 
 这又是一个官方的恶意。本以为是控件的那个属性没设置对，或者是`Key-Enter`的监听事件影响，无法在文本框中输入中文，一通疯狂的Google无果。准备换换脑子，看点电视剧打发打发，结果用新的关键词搜到了答案。
 
