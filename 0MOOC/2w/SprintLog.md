@@ -234,3 +234,8 @@ def insertInTextWidget(self, line):
 3. [mac下的 idle为何不能输入中文?该如何解决?](http://www.zhihu.com/question/26532408)
 
 
+## 最后微调
+
+调整了一下控件的大小和字体颜色，最终效果如下：
+
+![Finally.png](./Finally.png)

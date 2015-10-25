@@ -25,7 +25,7 @@ class Application(Frame):
 		self.buttonWidget()
 		
 	def textWidget(self):
-		self.text = Text(self, background = 'blue', font=("", 18), width='60', height='10')
+		self.text = Text(self, background = 'grey', font=("宋体", 18), width='60', height='20')
 		lines = readHistory(file)
 
 		for line in lines:
@@ -36,23 +36,23 @@ class Application(Frame):
 		self.text.pack()
 		
 	def labelWidget(self):
-		self.label = Label(self, text=' input: ', font=("Arial", 20))
+		self.label = Label(self, text=' 输入日记: ', font=("Arial", 20))
 		self.label.pack({"side": "left"})
 	
 	def entryWidget(self):
 		self.line = StringVar(self)
-		self.entry = Entry(self, textvariable=self.line, background = 'red', font=("宋体", 20, "normal"))
-		self.entry.insert(0, "测试")
+		self.entry = Entry(self, textvariable=self.line, fg='green', bg = 'black', font=("宋体", 20, "normal"), width=43)
 		self.entry.bind("<Return>", self.foo)
 		self.entry.pack({"side": "left"})
 		
 	def buttonWidget(self):
-		self.button = Button(self, text='save', font=("Arial", 20))
+		self.button = Button(self, text='退出', font=("Arial", 20))
+		self.button['command'] = self.quit
 		self.button.pack({"side": "left"})
 		
 	def __init__(self, master=None):
 		Frame.__init__(self, master)
-		#master.geometry('400x300')
+		master.resizable(False, False)
 		menubar = Menu(master)
 		file = Menu(menubar)
 		file.add_command(label="File", command=self.foo)
