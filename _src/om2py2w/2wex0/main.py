@@ -10,21 +10,32 @@ class Application(Frame):
 		print 'foo'
 	
 	def createWidgets(self):
+		self.textWidget()
+		self.labelWidget()
+		self.entryWidget()
+		self.buttonWidget()
+		
+	def textWidget(self):
 		text = Text(self, background = 'blue', font=("", 18), width='60', height='10')
 		lines = readHistory(file)
-		
+
 		for line in lines:
 			text.insert(END, line)
 		
 		text.config(state=DISABLED)
 		text.pack()
+		
+	def labelWidget(self):
 		label = Label(self, text=' input: ', font=("Arial", 20))
 		label.pack({"side": "left"})
+	
+	def entryWidget(self):
 		entry = Entry(self, background = 'red', font=("Arial", 20))
 		entry.pack({"side": "left"})
+		
+	def buttonWidget(self):
 		button = Button(self, text='save', font=("Arial", 20))
 		button.pack({"side": "left"})
-		
 		
 	def __init__(self, master=None):
 		Frame.__init__(self, master)
@@ -46,7 +57,7 @@ def main(argv):
 	global file 
 	file = sys.argv[1] 
 	root = Tk()
-	root.title("WTF")
+	root.title("GUI 101")
 	app = Application(master=root)
 	app.mainloop()
 	#appendHistory(file)
