@@ -9,8 +9,11 @@ class Application(Frame):
 		print 'foo'
 	
 	def createWidgets(self):
-		text = Entry(self, background = 'red')
-		text.grid()
+		entry = Entry(self, background = 'red')
+		entry.pack()
+		text = Text(self, background = 'blue')
+		text.config(state=DISABLED)
+		text.pack()
 		
 		
 	def __init__(self, master=None):
