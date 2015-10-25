@@ -16,6 +16,8 @@ class Application(Frame):
 		label.pack()
 		entry = Entry(self, background = 'red')
 		entry.pack()
+		button = Button(self, text='save')
+		button.pack()
 		
 		
 		
