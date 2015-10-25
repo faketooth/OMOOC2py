@@ -165,3 +165,8 @@ button.pack({"side": "left"})
 ![Layout-01.png](./Layout-01.png)
 
 还需要进一步微调。
+
+## 读取历史日记
+利用上次任务创建的代码：
+
+![ReadHistory.png](ReadHistory.png)
