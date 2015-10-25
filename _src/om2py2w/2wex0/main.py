@@ -12,8 +12,11 @@ class Application(Frame):
 		text = Text(self, background = 'blue')
 		text.config(state=DISABLED)
 		text.pack()
+		label = Label(self, text='input: ')
+		label.pack()
 		entry = Entry(self, background = 'red')
 		entry.pack()
+		
 		
 		
 	def __init__(self, master=None):
