@@ -129,3 +129,15 @@ text.pack()
 
 ![Text-Widget.pn](./Text-Widget.png)
 
+## 再来一个Label
+
+增加标签，提高界面友好度。关键代码：
+
+```
+label = Label(self, text='input: ')
+label.pack()
+```
+效果：
+
+![Label-Widget.png](./Label-Widget.png)
+
