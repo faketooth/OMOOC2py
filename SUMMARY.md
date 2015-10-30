@@ -15,6 +15,7 @@
 	- [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
 	- [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
 	- [GUI101 - 基于Tkinter的日记系统](_src/om2py2w/2wex0/README.md)
+	- [Net 101 - 基于网络的日志系统](_src/om2py3w/3wex0/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
 - [代码 (_src)](_src/README.md)
