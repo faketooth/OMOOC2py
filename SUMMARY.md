@@ -12,6 +12,7 @@
     	- [1wd6 任务需求分解](0MOOC/2w/RequirementAnalysis.md)
     	- [2wd0 迭代记录](0MOOC/2w/SprintLog.md)
 	- [第四周](0MOOC/3w/README.md)
+		- [2wd5 基础知识学习](0MOOC/3w/UDP_With_Python.md)
 - [基础旋进](1sTry/README.md)
 	- [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
 	- [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
