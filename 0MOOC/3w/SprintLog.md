@@ -76,3 +76,8 @@ ready_to_read, ready_to_write, in_error = \
 
 
 ***以上内容全部演绎自官方文档 [Socket Programming HOWTO](https://docs.python.org/2/howto/sockets.html)。***
+
+
+## 2. 什么是 UDP 协议
+
+UDP 协议是一种简单的不可靠信息传送服务，只管发，不操心对端是否成功接收。缺点是不提供数据包分组、组装和不能对数据包进行排序，但是相对于 TCP 协议，传送过程简单快速（不需要三次握手、错误重传等）。
