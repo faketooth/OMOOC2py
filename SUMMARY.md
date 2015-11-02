@@ -13,7 +13,7 @@
     	- [2wd0 迭代记录](0MOOC/2w/SprintLog.md)
 	- [第四周](0MOOC/3w/README.md)
 		- [3wd0 公开课笔记_2wd4](0MOOC/2w/note_2wd4.md)
-		- [3wd1 迭代记录](0MOOC/3w/SprintLog.md)
+		- [3wd1 迭代记录1](0MOOC/3w/SprintLog_3wd1.md)
 - [基础旋进](1sTry/README.md)
 	- [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
 	- [交互101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
