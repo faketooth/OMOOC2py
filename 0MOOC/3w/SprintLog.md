@@ -81,3 +81,54 @@ ready_to_read, ready_to_write, in_error = \
 ## 2. 什么是 UDP 协议
 
 UDP 协议是一种简单的不可靠信息传送服务，只管发，不操心对端是否成功接收。缺点是不提供数据包分组、组装和不能对数据包进行排序，但是相对于 TCP 协议，传送过程简单快速（不需要三次握手、错误重传等）。
+
+
+## 3. 基于 Python 的 UDP 服务端/客户端
+
+服务端代码：
+
+```
+# -*- coding: utf-8 -*-
+
+import socket
+import select
+
+def main():
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.bind(('', 9527))
+	while True:
+		reads, wirtes, errs = select.select([sock,],[],[],3)
+		if len(reads) != 0:
+			data, (host, port) = sock.recvfrom(8192)
+			print "host %s:%s, said: %s" % (host, port, data)
+		print 'no data.'
+		
+	sock.close()
+	
+if __name__ == '__main__':
+	main()	
+```
+
+客户端代码：
+
+```
+# -*- coding: utf-8 -*-
+
+import socket
+
+def main():
+	clientSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	while True:
+		input = raw_input(">>> ")
+		if input in ['q', 'quit', 'exit']:
+			break
+		clientSock.sendto(input, ('localhost', 9527))
+		
+	clientSock.close()
+	
+if __name__ == '__main__':
+	main()
+```
+
+测试结果：
+![Simple-UDP-Server-Client.png](Simple-UDP-Server-Client.png)
