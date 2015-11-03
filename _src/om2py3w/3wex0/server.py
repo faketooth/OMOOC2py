@@ -4,7 +4,7 @@ import socket
 import select
 import logging 
 
-logging.basicConfig(format='%(asctime)-15s|%(message)s', filename='history.log', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)-15s | %(message)s', filename='history.log', level=logging.DEBUG)
 
 def main():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -15,11 +15,11 @@ def main():
 	
 	while True:
 		reads, wirtes, errs = select.select([sock,his_sock,],[],[],3)
-		print len(reads)
 		if len(reads) != 0:
 			data, (host, port) = sock.recvfrom(8192)
 			user, message = data.split(": ")
 			if message in ['r', 'history']:
+				print "Sending history to %s@%s:%s" % (user, host, port)
 				sendHistory(his_sock)
 				continue
 			print "%s@%s:%s, said: %s" % (user, host, port, message)
@@ -32,10 +32,11 @@ def sendHistory(his):
 	#data = his.recvfrom(1024)
 	#print data
 	conn, addr = his.accept()
-	lines = ['a', 'b', 'c', 'd']
-	for line in lines:
-		conn.sendall(line)
-		print 'wtf'
+	conn.recv(1024)
+	with open('history.log') as history:
+		for line in history:
+			conn.sendall(line)
+			conn.recv(1024)
 	conn.sendall('EOT')
 	conn.close()
 

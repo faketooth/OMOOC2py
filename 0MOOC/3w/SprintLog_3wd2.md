@@ -41,3 +41,6 @@
 		* 是否需要使用 TCP 协议？
 		* 是否提供独立的端口用于处理该类请求？
 		* 历史消息如何发送？
+	![Server-Background.png](./Server-Background.png)
+	![dr-who.png](./dr-who.png)
+	![house-md.png](./house-md.png)

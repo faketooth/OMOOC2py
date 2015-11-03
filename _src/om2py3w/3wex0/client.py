@@ -34,10 +34,12 @@ def quit(clientSock):
 def history():
 	his = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	his.connect(('localhost', 9528))
+	his.sendall('Is it ready?')
 	data = his.recv(1024)
 	print 'data ', data
 	while data != 'EOT':
-		print data
+		print data,
+		his.sendall("Ok. Next line, please!")
 		data = his.recv(1024)
 	his.close()
 	print "Okey. Here is your history diary..."
