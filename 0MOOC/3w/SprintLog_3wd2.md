@@ -38,9 +38,42 @@
 	![Multi-clients.png](./Multi-clients.png)
 	* 反复获得历史消息
 		* 新增获取历史消息的命令接口
+		
+		```
+		def history():
+			his = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			his.connect(('localhost', 9528))
+			his.sendall('Is it ready?')
+			print "Okey. Here is your history diary...\n"
+			data = his.recv(1024)
+			while data != 'EOT':
+				print "   >>> %s" % data,
+				his.sendall("Ok. Next line, please!")
+				data = his.recv(1024)
+			print 
+			his.close()
+		```
 		* 是否需要使用 TCP 协议？
+			* Yes, I did it!
 		* 是否提供独立的端口用于处理该类请求？
+			* Yes, I did it!
 		* 历史消息如何发送？
+		
+		```
+		def sendHistory(his):
+			conn, addr = his.accept()
+			conn.recv(1024)
+			with open('history.log') as history:
+				for line in history:
+					conn.sendall(line)
+					conn.recv(1024)
+			conn.sendall('EOT')
+			conn.close()
+		```
+		
 	![Server-Background.png](./Server-Background.png)
 	![dr-who.png](./dr-who.png)
 	![house-md.png](./house-md.png)
+
+## 最终效果
+![finally.png](./finally.png)

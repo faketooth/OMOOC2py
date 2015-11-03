@@ -24,13 +24,10 @@ def main():
 				continue
 			print "%s@%s:%s, said: %s" % (user, host, port, message)
 			logging.debug("%s@%s:%s, said: %s" % (user, host, port, message))
-		#print 'no data...'
 		
 	sock.close()
 
 def sendHistory(his):
-	#data = his.recvfrom(1024)
-	#print data
 	conn, addr = his.accept()
 	conn.recv(1024)
 	with open('history.log') as history:

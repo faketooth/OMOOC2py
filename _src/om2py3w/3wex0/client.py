@@ -35,14 +35,15 @@ def history():
 	his = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	his.connect(('localhost', 9528))
 	his.sendall('Is it ready?')
+	print "Okey. Here is your history diary...\n"
 	data = his.recv(1024)
-	print 'data ', data
 	while data != 'EOT':
-		print data,
+		print "   >>> %s" % data,
 		his.sendall("Ok. Next line, please!")
 		data = his.recv(1024)
+	print 
 	his.close()
-	print "Okey. Here is your history diary..."
+	
 	
 if __name__ == '__main__':
 	main()
