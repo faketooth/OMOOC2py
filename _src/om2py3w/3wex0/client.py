@@ -22,6 +22,7 @@ def main():
 			print "Empty Message won't send!"
 			continue
 		if input in ['history', 'r']:
+			clientSock.sendto('%s: %s' % (username,input), ('localhost', 9527))
 			history()
 			continue
 		clientSock.sendto('%s: %s' % (username,input), ('localhost', 9527))
@@ -31,6 +32,14 @@ def quit(clientSock):
 	clientSock.close()
 	
 def history():
+	his = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	his.connect(('localhost', 9528))
+	data = his.recv(1024)
+	print 'data ', data
+	while data != 'EOT':
+		print data
+		data = his.recv(1024)
+	his.close()
 	print "Okey. Here is your history diary..."
 	
 if __name__ == '__main__':
