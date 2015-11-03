@@ -2,10 +2,15 @@
 
 * 支持中文推送
 	* 基于 CLI，需要特殊处理嘛？
+	![Input-Chinese.png](./Input-Chinese.png)
 * 支持连续发送
 	* 已经实现
+		* **上图显而易见啊**
 * 接收到的消息立即保存
 	* 保存为文件？
+		* 首选`logging`模块
+		![Logging-To-File-1.png](./Logging-To-File-1.png)
+		![Logging-To-File-2.png](./Logging-To-File-2.png)
 		* 内容？
 			* ip
 			* 端口

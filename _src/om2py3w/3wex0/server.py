@@ -2,6 +2,9 @@
 
 import socket
 import select
+import logging 
+
+logging.basicConfig(format='%(asctime)-15s %(message)s', filename='history.log', level=logging.DEBUG)
 
 def main():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -11,6 +14,7 @@ def main():
 		if len(reads) != 0:
 			data, (host, port) = sock.recvfrom(8192)
 			print "host %s:%s, said: %s" % (host, port, data)
+			logging.debug("host %s:%s, said: %s" % (host, port, data))
 		print 'no data.'
 		
 	sock.close()
