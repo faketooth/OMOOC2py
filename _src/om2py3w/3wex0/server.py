@@ -9,9 +9,11 @@ logging.basicConfig(format='%(asctime)-15s | %(message)s', filename='history.log
 def main():
 	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	sock.bind(('', 9527))
+	print 'UDP port 9527 has been ready...'
 	his_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 	his_sock.bind(('', 9528))
 	his_sock.listen(5)
+	print 'TCP port 9528 has been ready...'
 	
 	while True:
 		reads, wirtes, errs = select.select([sock,his_sock,],[],[],3)
@@ -19,7 +21,7 @@ def main():
 			data, (host, port) = sock.recvfrom(8192)
 			user, message = data.split(": ")
 			if message in ['r', 'history']:
-				print "Sending history to %s@%s:%s" % (user, host, port)
+				print "%s@%s:%s Asking for History Diary..." % (user, host, port)
 				sendHistory(his_sock)
 				continue
 			print "%s@%s:%s, said: %s" % (user, host, port, message)
@@ -38,4 +40,5 @@ def sendHistory(his):
 	conn.close()
 
 if __name__ == '__main__':
+	print "The server is starting..."
 	main()	
