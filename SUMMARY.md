@@ -15,6 +15,8 @@
 		- [3wd0 公开课笔记_2wd4](0MOOC/2w/note_2wd4.md)
 		- [3wd1 迭代记录1: 基于网络的日志系统](0MOOC/3w/SprintLog_3wd1.md)
 		- [3wd2 迭代记录2](0MOOC/3w/SprintLog_3wd2.md)
+	- [第五周](0MOOC/4w/README.md)
+		- [4w2 开发记录](0MOOC/4w/note.md)
 - [基础旋进](1sTry/README.md)
 	- [极简 Python 上手导念](_src/om2py0w/0wex0/README.md)
 	- [交互 101 - 小小日记系统](_src/om2py0w/0wex1/README.md)
