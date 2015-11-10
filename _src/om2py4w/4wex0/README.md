@@ -1,17 +1,26 @@
 # 基于 Web 页面的日志系统
 
-## Web 页面
-* 本周整体任务概述:
+## 1. 运行Server
 
-* 在上周开发基础上, 完成 `极简交互式笔记的Web版本`
-* 需求如下:
-	* 通过网页访问系统:
-	* 每次运行时合理的打印出过往的所有笔记
-	* 一次接收输入一行笔记
-	* 在服务端保存为文件
-	* 同时兼容 `3w` 的 `Net` 版本的命令行界面进行交互
-* 时限: `3wd4~4wd3`
-* 发布: 发布到各自仓库的 `_src/om2py4w/4wex0/` 目录中
-* 指标:
-	* 包含软件使用说明书: README.md
-	* 能令其它学员根据说明书,运行系统,完成所有功能
+* 执行`python diary.py`
+* 打开浏览器，访问`http://127.0.0.1:8080/`
+* 根据页面提示，选择
+	* 历史日志
+	* 写新日志
+
+![showcase-0.png](../../../0MOOC/4w/showcase-0.png)
+
+![showcase-2.png](../../../0MOOC/4w/showcase-2.png)
+
+![showcase-3.png](../../../0MOOC/4w/showcase-3.png)
+
+
+## 2. CLI 交互
+* 首先保证Server端运行
+* 执行`python cli.py`
+* 根据提示逐行输入日志
+* 输入`q`并按下回车后，退出
+
+![showcase-4.png](../../../0MOOC/4w/showcase-4.png)
+
+![showcase-5.png](../../../0MOOC/4w/showcase-5.png)
