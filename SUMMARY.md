@@ -27,6 +27,7 @@
 	- [Net 101 - 基于网络的日志系统](_src/om2py3w/3wex0/README.md)
 	- [Web 101 - 基于Web的日志系统](_src/om2py4w/4wex0/README.md)
 	- [PaaS 101 - 基于SAE的日志系统](_src/om2py5w/5wex0/README.md)
+	- [PaaS 101 - 基于SAE的日志系统test](_src/om2py5w/5wex0/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
 - [代码 (_src)](_src/README.md)
